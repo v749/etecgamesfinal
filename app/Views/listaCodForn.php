@@ -32,7 +32,7 @@
         <div>
             <div class="col-8 mb-3">
                 <label class="mb-3" for="codforn">Digite o Código do fornecedor</label>
-                <input type="number" name="codForn" id="codforn" class="form-control" placeholder="Exemplo:123">
+                <input type="number" name="codForn" id="codforn" class="form-control" placeholder="Exemplo:123" required>
             </div>
         </div>
         <div class="col-12">
