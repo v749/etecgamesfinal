@@ -32,7 +32,7 @@
     <form method="Post" class="border border-dark p-3 rounded">
         <div>
             <div class="col-8 mb-3">
-                <label class="mb-3" for="codusu">Digite o Código do usuário</label>
+                <label class="mb-3" for="codusu">Digite o Código do funcionário</label>
                 <input type="number" name="codUsu" id="codusu" class="form-control" placeholder="Exemplo:123" required>
             </div>
         </div>
@@ -40,6 +40,18 @@
             <button type="submit" class="btn btn-success">Buscar</button>
         </div>
     </form>
+
+<?php 
+//Selecionar todos os arquivos do método POST && GET
+$request = service('request');
+
+//Ternário
+$codusu = isset($request->codUsu)? $request->codUsu : 0;
+
+if($codusu > 0)
+{
+?>
+
     <form method="POST" class="border border-dark p-3 rounded">
 
         <table class="table">
@@ -74,3 +86,7 @@ $emailusu = isset($usuario->emailUsu) ? $usuario->emailUsu : "";
 </tr>
 </tbody>
 </table>
+
+<?php
+}
+?>
