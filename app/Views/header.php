@@ -14,7 +14,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark" >
   <div class="container-fluid">
     <a class="navbar-brand" style="color:#836FFF" href="#">
-    GameEtec</a>
+    EtecGames</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
