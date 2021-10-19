@@ -63,12 +63,12 @@
 
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nomefun" aria-describedby="nomeHelp">
+            <input type="text" class="form-control" id="nome" name="nomefun" aria-describedby="nomeHelp" required>
         </div>
 
         <div class="mb-3">
             <label for="fone" class="form-label">Fone</label>
-            <input type="text" class="form-control" id="fone" name="fonefun">
+            <input type="text" class="form-control" id="fone" name="fonefun" required>
         </div>
 
         <button type="submit" class="btn btn-success">Cadastrar</button>
