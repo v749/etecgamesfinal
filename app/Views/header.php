@@ -27,7 +27,7 @@
           <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Funcionário</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" style="color:red" href="#">Cadastro</a></li>
+            <li><a class="dropdown-item" style="color:red" href="./FuncionarioController/inserirFuncionario">Cadastro</a></li>
             <li><a class="dropdown-item" style="color:red" href="#">Pesquisar</a></li>
             <li><a class="dropdown-item" style="color:red" href="#">Alterar/Deletar</a></li>
           </ul>

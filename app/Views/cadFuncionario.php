@@ -8,15 +8,15 @@
     }
 
     th {
-        color:#1E90FF;
+        color: #1E90FF;
     }
 
     label {
-        color:#1E90FF;
+        color: #1E90FF;
     }
 
     td {
-        color:#1E90FF;
+        color: #1E90FF;
     }
 
     .formcad {
@@ -32,7 +32,7 @@
     <form method="Post" class="border border-dark p-3 rounded">
         <div>
             <div class="col-8 mb-3">
-                <label class="mb-3" for="codusu">Digite o Código do funcionário</label>
+                <label class="mb-3" for="codusu">Digite o Código do Usuário</label>
                 <input type="number" name="codUsu" id="codusu" class="form-control" placeholder="Exemplo:123" required>
             </div>
         </div>
@@ -41,52 +41,35 @@
         </div>
     </form>
 
-<?php 
-//Selecionar todos os arquivos do método POST && GET
-$request = service('request');
+    <?php
+    //Selecionar todos os arquivos do método POST && GET
+    $request = service('request');
 
-//Ternário
-$codusu = isset($request->codUsu)? $request->codUsu : 0;
+    //Ternário
+    $codusu = isset($usuario->codusu)?$usuario->codusu:0;
+    $email = isset($usuario->emailUsu)?$usuario->emailUsu:'';
+    ?>
 
-if($codusu > 0)
-{
-?>
+    <form method="Post">
+        <div class="mb-3">
+            <label for="codusu" class="form-label">Código Usuário</label>
+            <input type="text" class="form-control" id="codusu" name="codUsu" value="<?=$codusu?>" readonly aria-describedby="Exemplo: 123">
+        </div>
 
-    <form method="POST" class="border border-dark p-3 rounded">
+        <div class="mb-3">
+            <label for="emailusu" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="emailusu" name="emailUsu" readonly value="<?=$email?>" aria-describedby="nomeHelp">
+        </div>
 
-        <table class="table">
-            <thead>
-                <th>Código</th>
-                <th>Email</th>
-                <th>Alterar</th>
-                <th>Deletar</th>
-            </thead>
-            <tbody>
-</div>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nomefun" aria-describedby="nomeHelp">
+        </div>
 
-<?php
-$codusu = isset($usuario->codusu) ? $usuario->codusu : "";
-$emailusu = isset($usuario->emailUsu) ? $usuario->emailUsu : "";
-?>
-<tr>
-    <td><?php echo($codusu)?></td>
-    <td><?php echo($emailusu)?></td>
-    <td>
-        <form method="POST">
-            <input type="hidden" name="codUsuAlterar" value="<?php echo ($codusu) ?>">
-            <button type="submit" class="btn btn-warning">Alterar</button>
-        </form>
-    </td>
-    <td>
-        <form method="POST">
-            <input type="hidden" name="codUsuDel" value="<?php echo ($codusu) ?>">
-            <button type="submit" class="btn btn-danger">Deletar</button>
-        </form>
-    </td>
-</tr>
-</tbody>
-</table>
+        <div class="mb-3">
+            <label for="fone" class="form-label">Fone</label>
+            <input type="text" class="form-control" id="fone" name="fonefun">
+        </div>
 
-<?php
-}
-?>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
