@@ -29,6 +29,7 @@
 </style>
 
 <div class="formcad">
+    <h2>Para cadastrar um funcionário primeiro deve fazer o cadastro do usuário. </br> Se já fez, coloque a informação abaixo.</h2>
     <form method="Post" class="border border-dark p-3 rounded">
         <div>
             <div class="col-8 mb-3">
@@ -46,30 +47,37 @@
     $request = service('request');
 
     //Ternário
-    $codusu = isset($usuario->codusu)?$usuario->codusu:0;
-    $email = isset($usuario->emailUsu)?$usuario->emailUsu:'';
+    $codusu = isset($usuario->codusu) ? $usuario->codusu : 0;
+    $email = isset($usuario->emailUsu) ? $usuario->emailUsu : '';
+
+    if ($codusu) {
+
     ?>
 
-    <form method="Post">
-        <div class="mb-3">
-            <label for="codusu" class="form-label">Código Usuário</label>
-            <input type="text" class="form-control" id="codusu" name="codUsu" value="<?=$codusu?>" readonly aria-describedby="Exemplo: 123">
-        </div>
+        <form method="Post">
+            <div class="mb-3">
+                <label for="codusu" class="form-label">Código Usuário</label>
+                <input type="text" class="form-control" id="codusu" name="codUsu" value="<?= $codusu ?>" readonly aria-describedby="Exemplo: 123" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="emailusu" class="form-label">E-mail</label>
-            <input type="text" class="form-control" id="emailusu" name="emailUsu" readonly value="<?=$email?>" aria-describedby="nomeHelp">
-        </div>
+            <div class="mb-3">
+                <label for="emailusu" class="form-label">E-mail</label>
+                <input type="text" class="form-control" id="emailusu" name="emailUsu" value="<?= $email ?>" readonly aria-describedby="nomeHelp" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nomefun" aria-describedby="nomeHelp" required>
-        </div>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nomefun" aria-describedby="nomeHelp" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="fone" class="form-label">Fone</label>
-            <input type="text" class="form-control" id="fone" name="fonefun" required>
-        </div>
+            <div class="mb-3">
+                <label for="fone" class="form-label">Fone</label>
+                <input type="text" class="form-control" id="fone" name="fonefun" required>
+            </div>
 
-        <button type="submit" class="btn btn-success">Cadastrar</button>
-    </form>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </form>
+
+    <?php
+    }
+    ?>

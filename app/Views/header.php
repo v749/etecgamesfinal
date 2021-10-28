@@ -21,24 +21,24 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" style="color:#836FFF" href="#">Home</a>
+          <a class="nav-link active" style="color:#836FFF" href="<?php echo base_url('Home')?>">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Funcionário</a>
+           Funcionários</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" style="color:red" href="./FuncionarioController/inserirFuncionario">Cadastro</a></li>
-            <li><a class="dropdown-item" style="color:red" href="#">Pesquisar</a></li>
-            <li><a class="dropdown-item" style="color:red" href="#">Alterar/Deletar</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/listaCodFuncionario')?>">Cadastro</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/buscaPrincipalFuncionarioCod')?>">Pesquisar por Código</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/')?>">Pesquisar por Nome</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Jogos</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" style="color:red" href="#">Cadastro</a></li>
-            <li><a class="dropdown-item" style="color:red" href="#">Pesquisar </a></li>
-            <li><a class="dropdown-item" style="color:red" href="#">Alterar/Deletar</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./JogosController/')?>">Cadastro</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./JogosController/')?>">Pesquisar por Código </a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./JogosController/')?>">Pesquisar por Nome</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -52,11 +52,20 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Fornecedor</a>
+           Fornecedores</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FornecedorController/inserirFornecedor')?>">Cadastro</a></li>
-            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FornecedorController/todosFornecedores')?>">Pesquisar todos</a></li>
-            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FornecedorController/listaCodFornecedores')?>">Pesquisar por código</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FornecedorController/todosFornecedores')?>">Pesquisar por Todos</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FornecedorController/listaCodFornecedores')?>">Pesquisar por Código</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Clientes</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./ClienteController/')?>">Cadastro</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./ClienteController/')?>">Pesquisar por Código</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./ClienteController/')?>">Pesquisar por Nome</a></li>
           </ul>
         </li>
       </ul>

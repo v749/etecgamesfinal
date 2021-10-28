@@ -39,21 +39,80 @@ class FuncionarioController extends BaseController
         $request = service('request');
         $data['usuario'] = "";
 
-        if($request->getPost('codUsu'))
-        {
+        if ($request->getPost('codUsu')) {
             $codusuario = $request->getPost('codUsu');
             $UsuarioModel = new \App\Models\UsuarioModel();
             $registros = $UsuarioModel->find($codusuario);
             $data['usuario'] = $registros;
         }
-        
-        if($request->getPost('nomefun') && $request->getPost('fonefun'))
-        {
+
+        if ($request->getPost('nomefun') && $request->getPost('fonefun')) {
             $this->inserirFuncionario();
         }
 
         echo view('header');
         echo view('cadFuncionario', $data);
         echo view('footer');
+    }
+
+    public function buscaPrincipalFuncionarioCod()
+    {
+        $request = service('request');
+        $codfuncionario = $request->getPost('codFun');
+        $FuncionarioModel = new \App\Models\FuncionarioModel();
+        $registros = $FuncionarioModel->find($codfuncionario);
+
+
+        if ($request->getPost('codFunDeletar')) {
+            $this->funcionarioExcluir($request->getPost('codFunDeletar'));
+            return redirect()->to(base_url('FuncionarioController/todosUsuarios/'));
+        }
+
+        if ($request->getPost('codFunAlterar')) {
+            return $this->funcionarioAlterar();
+        }
+
+        $data['funcionario'] = $registros;
+
+        echo view('header');
+        echo view('buscaCodigoFuncionario', $data);
+        echo view('footer');
+    }
+
+    public function funcionarioAlterar()
+    {
+        $request = service('request');
+        $codFunAlterar = $request->getPost('codFunAlterar');
+        $nomeFun = $request->getPost('nomeFun');
+        $foneFun = $request->getPost('foneFun');
+
+        $FuncionarioModel = new \App\Models\FuncionarioModel();
+        $registros = $FuncionarioModel->find($codFunAlterar);
+
+        if ($request->getPost('nomeFun') && $request->getPost('foneFun')) {
+            $registros->nomeFun = $nomeFun;
+            $registros->foneFun = $foneFun;
+            $FuncionarioModel->update($codFunAlterar, $registros);
+
+            return redirect()->to(base_url('Home'));
+        }
+
+        $data['funcionario'] = $registros;
+    }
+
+
+    public function funcionarioExcluir($codFunDeletar)
+    {
+        if (is_null($codFunDeletar)) {
+            return redirect()->to(base_url('UsuarioController/todosUsuarios'));
+        }
+
+        $FuncionarioModel = new \App\Models\FuncionarioModel();
+
+        if ($FuncionarioModel->delete($codFunDeletar)) {
+            //return redirect()->to(base_url('UsuarioController/todosUsuarios'));
+        } else {
+            //return redirect()->to(base_url('UsuarioController/todosUsuarios'));
+        }
     }
 }
