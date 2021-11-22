@@ -72,7 +72,7 @@ class FuncionarioController extends BaseController
 
         if ($request->getPost('codFunDeletar')) {
             $this->funcionarioExcluir($request->getPost('codFunDeletar'));
-            return redirect()->to(base_url('FuncionarioController/todosUsuarios/'));
+            return redirect()->to(base_url('Home')); //Direciona para a Página inicial
         }
 
         if ($request->getPost('codFunAlterar')) {

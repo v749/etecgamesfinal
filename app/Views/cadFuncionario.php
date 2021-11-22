@@ -29,7 +29,7 @@
 </style>
 
 <div class="formcad">
-    <h2>Para cadastrar um funcionário primeiro deve fazer o cadastro do usuário. </br> Se já fez, coloque a informação abaixo.</h2>
+    <h3>Para cadastrar um funcionário primeiro deve fazer o cadastro do usuário. </br> Se já fez, coloque a informação abaixo.</h3>
     <form method="Post" class="border border-dark p-3 rounded">
         <div>
             <div class="col-8 mb-3">
