@@ -116,6 +116,7 @@
 
     <?php
     }
+    //ternario
     $nomeFuncionario = isset($nomeFuncionario) ? $nomeFuncionario : '';
     if ($nomeFuncionario) {
     ?>
