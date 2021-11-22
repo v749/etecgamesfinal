@@ -28,8 +28,7 @@
            Funcionários</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/listaCodFuncionario')?>">Cadastro</a></li>
-            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/buscaPrincipalFuncionarioCod')?>">Pesquisar por Código</a></li>
-            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/')?>">Pesquisar por Nome</a></li>
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./FuncionarioController/buscaPrincipalFuncionario')?>">Pesquisar</a></li>            
           </ul>
         </li>
         <li class="nav-item dropdown">
