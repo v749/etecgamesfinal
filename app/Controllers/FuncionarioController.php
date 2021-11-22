@@ -41,6 +41,7 @@ class FuncionarioController extends BaseController
 
         if ($request->getPost('codUsu')) {
             $codusuario = $request->getPost('codUsu');
+            //Instanciar o bd da tb_usuario para receber os dados e criar um new funcionario
             $UsuarioModel = new \App\Models\UsuarioModel();
             $registros = $UsuarioModel->find($codusuario);
             $data['usuario'] = $registros;
