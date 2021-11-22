@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 class FuncionarioController extends BaseController
 {
-
     public function index()
     {
         echo view('header');
@@ -107,7 +106,6 @@ class FuncionarioController extends BaseController
 
         $data['funcionario'] = $registros;
     }
-
 
     public function funcionarioExcluir($codFunDeletar)
     {

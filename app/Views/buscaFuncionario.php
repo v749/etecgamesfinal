@@ -77,14 +77,14 @@
 
 <div class="formcad">
 
-    <?php    
+    <?php
 
     //Selecionar todos os arquivos do método POST && GET
-    $request = service('request');    
+    $request = service('request');
 
     //Ternário
     $codfun = isset($funcionario->codFun) ? $funcionario->codFun : 0;
-    $nomeFun = isset($funcionario->nomeFun) ? $funcionario->nomeFun : '';    
+    $nomeFun = isset($funcionario->nomeFun) ? $funcionario->nomeFun : '';
 
     $fonefun = isset($funcionario->foneFun) ? $funcionario->foneFun : '';
     if ($codfun) {
