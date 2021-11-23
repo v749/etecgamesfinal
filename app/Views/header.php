@@ -42,6 +42,14 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categoria Jogos</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./CategoriaJogosController/inserirCategoriaJogos')?>">Cadastro</a></li>                        
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color:#836FFF" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Usuários</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" style="color:red" href="<?php echo base_url('./UsuarioController/inserirUsuario')?>">Cadastro</a></li>
