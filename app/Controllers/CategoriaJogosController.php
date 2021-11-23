@@ -35,7 +35,7 @@ class CategoriaJogosController extends BaseController
                 $data['msg'] = "Informações não cadastradas";
             }
         }
-        echo view('header');
+        echo view('header'); //pagina inicial
         echo view('cadCategoriaJogo', $data);
         echo view('footer');
     }
