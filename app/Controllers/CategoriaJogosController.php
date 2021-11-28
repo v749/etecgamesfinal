@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Controllers;
-//use App\Models\CatJogoModel;
-
-//use CodeIgniter\HTTP\Request;
 
 class CategoriaJogosController extends BaseController
 {
