@@ -9,6 +9,8 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+//Autor: José Victor Oliveira dos Santos
+
 /**
  * Class BaseController
  *
