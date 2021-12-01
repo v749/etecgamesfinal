@@ -85,7 +85,6 @@
     //Ternário
     $codfun = isset($funcionario->codFun) ? $funcionario->codFun : 0;
     $nomeFun = isset($funcionario->nomeFun) ? $funcionario->nomeFun : '';
-
     $fonefun = isset($funcionario->foneFun) ? $funcionario->foneFun : '';
     if ($codfun) {
     ?>
@@ -93,7 +92,7 @@
         <form method="Post">
             <div class="mb-3">
                 <label for="codfun" class="form-label">Código Funcionário</label>
-                <input type="number" class="form-control" id="codfun" value="<?= $codfun ?>" name="codFunAlterar" readonly aria-describedby="Exemplo: 123">
+                <input type="number" class="form-control" id="codfun" value="<?= $codfun ?>" name="codFunAlterar"  aria-describedby="Exemplo: 123" readonly>
             </div>
 
             <div class="mb-3">

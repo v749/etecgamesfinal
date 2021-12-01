@@ -17,9 +17,8 @@ class UsuarioController extends BaseController
         $data["msg"] = '';
         //Solicitar todos os arquivos do método POST e GET
         $request = service('request');
-        
-        if ($request->getMethod() === 'post')
-        {
+
+        if ($request->getMethod() === 'post') {
             //Intanciar o banco de dados usuario_tb
             $UsuarioModelo = new \App\Models\UsuarioModel();
             //Parte de criptografar as senhas criadas
@@ -29,12 +28,9 @@ class UsuarioController extends BaseController
             $UsuarioModelo->set('emailusu', $request->getPost('emailusu'));
             $UsuarioModelo->set('senhausu', $senhaCrip);
 
-            if ($UsuarioModelo->insert())
-            {
+            if ($UsuarioModelo->insert()) {
                 $data['msg'] = "Informações cadastrada com sucesso";
-            }
-            else
-            {
+            } else {
                 $data['msg'] = "Informações não cadastradas";
             }
         }
@@ -53,14 +49,12 @@ class UsuarioController extends BaseController
         $codusuario = $request->getPost('codUsu');
         $codUsuAlterar = $request->getPost('codUsuAlterar');
 
-        if ($codusuario)
-        {
+        if ($codusuario) {
             $this->deletarUsuario($codusuario);
             return redirect()->to(base_url('UsuarioController/todosUsuarios/'));
         }
 
-        if ($codUsuAlterar)
-        {
+        if ($codUsuAlterar) {
             return $this->alterarUsuario();
         }
 
@@ -82,14 +76,12 @@ class UsuarioController extends BaseController
         $codUsuDel = $request->getPost('codUsuDel');
 
 
-        if ($codUsuDel)
-        {
-            $this->deletarUsuario($codUsuDel);
+        if ($codUsuDel) {
+            $this->deletarUsuarioCod($codUsuDel);
             return redirect()->to(base_url('UsuarioController/listaCodUsuarios'));
         }
 
-        if ($codUsuAlterar)
-        {
+        if ($codUsuAlterar) {
             return $this->alterarUsuarioCod();
         }
 
@@ -99,18 +91,17 @@ class UsuarioController extends BaseController
     }
 
     public function alterarUsuario()
-    {        
+    {
         $request = service('request');
         $codUsuAlterar = $request->getPost('codUsuAlterar');
         $emailUsu = $request->getPost('emailUsu');
 
         $UsuarioModel = new \App\Models\UsuarioModel();
-        $registros = $UsuarioModel->find($codUsuAlterar);  
+        $registros = $UsuarioModel->find($codUsuAlterar);
 
-        if ($request->getPost('emailUsu'))
-        {
+        if ($request->getPost('emailUsu')) {
             $registros->emailusu = $emailUsu;
-            $UsuarioModel->update($codUsuAlterar,$registros);
+            $UsuarioModel->update($codUsuAlterar, $registros);
 
             return redirect()->to(base_url('UsuarioController/todosUsuarios/'));
         }
@@ -123,17 +114,17 @@ class UsuarioController extends BaseController
     }
 
     public function alterarUsuarioCod()
-    {        
+    {
         $request = service('request');
         $codUsuAlterar = $request->getPost('codUsuAlterar');
         $emailUsu = $request->getPost('emailUsu');
 
         $UsuarioModel = new \App\Models\UsuarioModel();
-        $registros = $UsuarioModel->find($codUsuAlterar);  
+        $registros = $UsuarioModel->find($codUsuAlterar);
 
         if ($request->getPost('emailUsu')) {
             $registros->emailusu = $emailUsu;
-            $UsuarioModel->update($codUsuAlterar,$registros);
+            $UsuarioModel->update($codUsuAlterar, $registros);
 
             return redirect()->to(base_url('UsuarioController/listaCodUsuarios/'));
         }
@@ -147,18 +138,14 @@ class UsuarioController extends BaseController
 
     public function deletarUsuario($codusuario = null)
     {
-        if (is_null($codusuario))
-        {
+        if (is_null($codusuario)) {
             return redirect()->to(base_url('UsuarioController/todosUsuarios'));
         }
 
         $UsuarioModel = new \App\Models\UsuarioModel();
-        if ($UsuarioModel->delete($codusuario)) 
-        {
+        if ($UsuarioModel->delete($codusuario)) {
             return redirect()->to(base_url('UsuarioController/todosUsuarios'));
-        }
-        else
-        {
+        } else {
             return redirect()->to(base_url('UsuarioController/todosUsuarios'));
         }
         return redirect()->to(base_url('UsuarioController/todosUsuarios'));

@@ -39,16 +39,16 @@
           <td><?php echo ($usuario->emailUsu) ?></td>
           <td>
             <form method="POST">
-              <input type="hidden" name="codUsuAlterar" value="<?php echo ($usuario->codusu) ?>">
+              <input type="hidden" name="codUsuAlterar" value="<?php echo($usuario->codusu)?>">
               <button type="submit" class="btn btn-warning">Alterar</button>
             </form>
           </td>
           <td>
             <form method="POST">
-              <input type="hidden" name="codUsu" value="<?php echo ($usuario->codusu) ?>">
+              <input type="hidden" name="codUsu" value="<?php echo($usuario->codusu)?>">
               <button type="submit" class="btn btn-danger">Deletar</button>
             </form>
-          </td>
+          </td> 
         </tr>
       <?php endforeach; ?>
     </tbody>

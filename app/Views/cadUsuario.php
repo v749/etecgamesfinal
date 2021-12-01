@@ -29,7 +29,7 @@
 
   <div class="mb-3">
     <label for="senha" class="form-label">Senha</label>
-    <input type="password" class="form-control" name="senhausu" id="senha" required>
+    <input type="password" class="form-control" id="senha" name="senhausu" required>
   </div>
 
   <button type="submit" class="btn btn-success">Cadastrar</button>
